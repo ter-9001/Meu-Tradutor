@@ -1,0 +1,166 @@
+doctype html
+html
+  head
+    title= "Mine Translator"
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+    script.
+        
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+
+             $("#text").on('change', () => {
+                 alert('foi')
+                 var a = "http://localhost:3000/translate/"+ $("#text").val().toString() + '/'+ $('#language').val().toString();
+                 alert(a)
+                 window.location.replace(a);
+      
+              })
+
+
+            $("#language").on('change', () => {
+                
+                 var a = "http://localhost:3000/translate/"+ $("#text").val().toString() + '/'+ $('#language').val().toString();
+                
+                 window.location.replace(a);
+      
+              })
+
+
+          
+             $("#language").val( $("#selected").text())
+
+
+
+        })
+       
+
+
+
+
+
+  body
+    .container-fluid
+      .container-fluid(style="background-color: #00ff00;") 
+        p(style="font-style: italic; font-size: 40px; text-shadow: 1px 1px 2px #474a47;")="Mine Translator"
+        p(style="font-style: italic; font-size: 20px; text-shadow: 1px 1px 2px #474a47;margin-top: -10px; padding-top: 0px")="By Gabriel Martins"
+        p(id='selected', style="display: none")= selected
+      .row.container-fluid(style="justify-content: space-between")
+        .col(style="border: solid 0.1px black; margin-right: 15px; width: 90%")
+          div(style="aling-item: left; background-color: aliceblue")
+            select(id="language", name="Selecione Linguagem", style="background-color: aliceblue; border: none")
+                              option(value='af')  Afrikaans
+                              option(value='sq')  Albanian
+                              option(value='am')  Amharic
+                              option(value='ar')  Arabic
+                              option(value='hy')  Armenian
+                              option(value='az')  Azerbaijani
+                              option(value='eu')  Basque
+                              option(value='be')  Belarusian
+                              option(value='bn')  Bengali
+                              option(value='bs')  Bosnian
+                              option(value='bg')  Bulgarian
+                              option(value='ca')  Catalan
+                              option(value='ceb')  Cebuano
+                              option(value='zh-CN')  Chinese (Simplified)
+                              option(value='zh-TW')  Chinese (Traditional)
+                              option(value='co')  Corsican
+                              option(value='hr')  Croatian
+                              option(value='cs')  Czech
+                              option(value='da')  Danish
+                              option(value='nl')  Dutch
+                              option(value='en')  English
+                              option(value='eo')  Esperanto
+                              option(value='et')  Estonian
+                              option(value='fi')  Finnish
+                              option(value='fr')  French
+                              option(value='fy')  Frisian
+                              option(value='gl')  Galician
+                              option(value='ka')  Georgian
+                              option(value='de')  German
+                              option(value='el')  Greek
+                              option(value='gu')  Gujarati
+                              option(value='ht')  Haitian Creole
+                              option(value='ha')  Hausa
+                              option(value='haw')  Hawaiian
+                              option(value='he')  Hebrew
+                              option(value='iw')  he or iw
+                              option(value='hi')  Hindi
+                              option(value='hmn')  Hmong
+                              option(value='hu')  Hungarian
+                              option(value='is')  Icelandic
+                              option(value='ig')  Igbo
+                              option(value='id')  Indonesian
+                              option(value='ga')  Irish
+                              option(value='it')  Italian
+                              option(value='ja')  Japanese
+                              option(value='jv')  Javanese
+                              option(value='kn')  Kannada
+                              option(value='kk')  Kazakh
+                              option(value='km')  Khmer
+                              option(value='rw')  Kinyarwanda
+                              option(value='ko')  Korean
+                              option(value='ku')  Kurdish
+                              option(value='ky')  Kyrgyz
+                              option(value='lo')  Lao
+                              option(value='lv')  Latvian
+                              option(value='lt')  Lithuanian
+                              option(value='lb')  Luxembourgish
+                              option(value='mk')  Macedonian
+                              option(value='mg')  Malagasy
+                              option(value='ms')  Malay
+                              option(value='ml')  Malayalam
+                              option(value='mt')  Maltese
+                              option(value='mi')  Maori
+                              option(value='mr')  Marathi
+                              option(value='mn')  Mongolian
+                              option(value='my')  Myanmar (Burmese)
+                              option(value='ne')  Nepali
+                              option(value='no')  Norwegian
+                              option(value='ny')  Nyanja (Chichewa)
+                              option(value='or')  Odia (Oriya)
+                              option(value='ps')  Pashto
+                              option(value='fa')  Persian
+                              option(value='pl')  Polish
+                              option(value='pt')  Portuguese (Portugal, Brazil)
+                              option(value='pa')  Punjabi
+                              option(value='ro')  Romanian
+                              option(value='ru')  Russian
+                              option(value='sm')  Samoan
+                              option(value='gd')  Scots Gaelic
+                              option(value='sr')  Serbian
+                              option(value='st')  Sesotho
+                              option(value='sn')  Shona
+                              option(value='sd')  Sindhi
+                              option(value='si')  Sinhala (Sinhalese)
+                              option(value='sk')  Slovak
+                              option(value='sl')  Slovenian
+                              option(value='so')  Somali
+                              option(value='es')  Spanish
+                              option(value='su')  Sundanese
+                              option(value='sw')  Swahili
+                              option(value='sv')  Swedish
+                              option(value='tl')  Tagalog (Filipino)
+                              option(value='tg')  Tajik
+                              option(value='ta')  Tamil
+                              option(value='tt')  Tatar
+                              option(value='te')  Telugu
+                              option(value='th')  Thai
+                              option(value='tr')  Turkish
+                              option(value='tk')  Turkmen
+                              option(value='uk')  Ukrainian
+                              option(value='ur')  Urdu
+                              option(value='ug')  Uyghur
+                              option(value='uz')  Uzbek
+                              option(value='vi')  Vietnamese
+                              option(value='cy')  Welsh
+                              option(value='xh')  Xhosa
+                              option(value='yi')  Yiddish
+                              option(value='yo')  Yoruba
+                              option(value='zh')  Chinês (simplificado)
+          div(style="") 
+              input(id="text",type="text", placeholder="What to translate?", style="border: none; justify-content: center; margin: 15px", 
+              value=text)
+        
+        .col(style="border: solid 0.1px #474a47; aling-item: left; padding: 15px; padding-left: 0; margin-left: 15px")
+          p(style="margin-left:10px")= traducao
